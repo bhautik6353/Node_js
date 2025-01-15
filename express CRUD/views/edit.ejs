@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/updatedata" method="post">
+        <input hidden type="text" value="<%=singledata.id%>" name="id">
+        <input type="text" value="<%=singledata.name%>" placeholder="Enter Name" name="name"> <br>
+        <input type="text" value="<%=singledata.subject%>" placeholder="Enter Subject" name="subject"> <br>
+        <input type="number" value="<%=singledata.age%>" placeholder="Enter Age" name="age"> <br>
+        <button type="submit">Submit</button>
+      </form>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      margin-top: 50px;
+      
+    }
+
+    form {
+      background: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      max-width: 350px;
+      display: flex;
+      flex-direction: column;
+      line-height: 30px;
+      margin-top: 60px;
+    }
+    form label{
+        text-align: center;
+    }
+
+    form input, form button {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    form input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    form button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      font-size: 16px;
+
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+    img{
+      width: 60%;
+      margin-left: 60px;
+    }
+</style>
+<body>
+    <center>
+        <h1>Edit Movie Store Data</h1>
+    </center>
+    <form action="/updatedata" enctype="multipart/form-data" method="post">
+        <img src="<%=data.image%>" alt="">
+        <input hidden type="text" value="<%=data.id%>" name="id">
+        <label for="">Movie Name:</label>
+        <input type="text" value="<%=data.name%>" placeholder="Enter Name" name="name"> <br>
+        <label for="">Movie Language:</label>
+        <input type="text" value="<%=data.Language%>" placeholder="Enter Subject" name="Language"> <br>
+        <label for="">Movie Type:</label>
+        <input type="text" value="<%=data.Type%>" placeholder="Enter Age" name="Type"> <br>
+        <label for="">Book Release Date:</label>
+        <input type="date" value="<%=data.Date%>" placeholder="Enter Age" name="Date"> <br>
+        <label for="">Book Image:</label>
+        <input type="file" name="image"><br>
+
+        <button type="submit">Edit Data</button>
+      </form>
+</body>
+</html>

@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    text-decoration: none;
+}
+.bg{
+    height: 730px;
+    background: url(https://t4.ftcdn.net/jpg/06/89/49/95/360_F_689499531_MeYeI1VVavgYQRzz0S3JxkQ9VxzgYZQh.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/* General Form Styling */
+form {
+    width: 40%;  /* Adjust width for better responsiveness */
+    max-width: 400px;  /* Limit max-width for consistency */
+    height: auto;  /* Allow form height to adjust based on content */
+    padding: 30px;  /* Increased padding for better spacing */
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgba(212, 212, 212, 0.75);  /* Slightly darker background for better contrast */
+    border-radius: 8px;  /* Rounded corners */
+    margin: 50px auto;  /* Center the form with top margin */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);  /* Soft shadow for depth */
+}
+
+/* Heading Styling */
+form h1 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: lighter;  /* Increased font size for better readability */
+    color: black;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;  /* Make the heading stand out */
+}
+
+/* Label Styling */
+label {
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+    padding-bottom: 5px;
+    font-weight: bold;
+    
+}
+
+/* Input Fields Styling */
+input {
+    padding: 14px;
+    width: 100%;  /* Ensure the input field fills the container */
+    margin-bottom: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;  /* Light border for better visibility */
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;  /* Smooth transition on focus */
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* Focus Effect for Inputs */
+input:focus {
+    outline: none;
+    border-color: #f53e68;  /* Highlight the border on focus */
+    box-shadow: 0 0 8px rgba(245, 62, 104, 0.5);  /* Subtle glow effect */
+}
+
+/* Submit Button Styling */
+.submit {
+    background-color: #f53e68;  /* Bright and noticeable color */
+    color: white;
+    font-size: 18px;
+    padding: 14px 20px;
+    width: 100%;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    font-weight: bold;
+}
+
+/* Hover Effect for Submit Button */
+.submit:hover {
+    background-color: #e03e5b;  /* Slightly darker shade on hover */
+    transform: scale(1.05);  /* Slightly scale the button */
+    box-shadow: 0 4px 15px rgba(245, 62, 104, 0.4);  /* Add a soft shadow on hover */
+}
+
+/* Active State for Submit Button */
+.submit:active {
+    background-color: #d03352;  /* Darker color when clicked */
+    transform: scale(1);  /* Reset scale */
+}
+
+@media (max-width: 768px) {
+    form {
+        width: 80%;  
+        padding: 20px; 
+    }
+
+    form h1 {
+        font-size: 22px; 
+    }
+
+    input {
+        padding: 16px;  /* Increased padding for better touch interaction */
+    }
+
+    .submit {
+        padding: 16px 0;  /* Adjust button padding */
+    }
+}
+
+@media (max-width: 480px) {
+    form {
+        width: 95%;  /* Full width for very small screens */
+        padding: 15px;  /* Adjust padding for smaller screens */
+    }
+
+    form h1 {
+        font-size: 20px;  /* Smaller heading */
+    }
+
+    input {
+        padding: 16px;  /* Consistent padding */
+    }
+
+    .submit {
+        padding: 18px 0;  /* Adjust button size for small screens */
+    }
+}
+#labellist{
+    font-size: 15px;
+    font-weight: lighter;
+    color: black;
+}

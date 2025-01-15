@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Store</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    nav{
+      width: 100%;
+    }
+
+    .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4caf50;
+    padding: 10px 20px;
+  }
+
+  .navbar .logo a {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-links li {
+    margin: 0 15px;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: white;
+    font-weight: bold;
+  }
+
+
+
+
+
+    .main{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 100px;
+    }
+    .main1{
+      width: 30%;
+    }
+    .main2{
+      width: 70%;
+      overflow: scroll;
+      height: 440px;
+    }
+    .main2::-webkit-scrollbar {
+  display: none; 
+}
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 2.5rem;
+      
+    }
+
+    form {
+      background: #ffffff;
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 400px;
+      height: 450px;
+      line-height: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    form input, form button {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    form input:focus {
+      border-color: #4caf50;
+      outline: none;
+    }
+
+    form button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    form button:hover {
+      background-color: #45a049;
+    }
+
+
+    table {
+      width: 80%;
+      margin-top: 20px;
+      border-collapse: collapse;
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      margin-left: 80px;
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #4caf50;
+      color: white;
+      font-size: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    td button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-right: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    td button:hover {
+      background-color: #0056b3;
+    }
+
+    td button a {
+      color: white;
+      text-decoration: none;
+    }
+
+    td button a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="/">Movie Store</a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="">Home</a></li>
+      <li><a href="">Add Movie</a></li>
+      <li><a href="">About</a></li>
+      <li><a href="">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="main">
+    <div class="main1">
+  <center>
+    
+    <form action="/addData" enctype="multipart/form-data" method="post">
+      <h3>Add Movie Detail</h3>
+      <input type="text" placeholder="Enter Movie Name" name="name" required>
+      <input type="text" placeholder="Enter Movie Language" name="Language" required>
+      <input type="text" placeholder="Enter Movie type" name="Type" required>
+      <input type="date" placeholder="Enter Book Release Date" name="Date" required>
+      
+      <input type="file" name="image">
+      <button type="submit">Add Book</button>
+    </form>
+  </center>
+</div>
+<div class="main2">
+  <table>
+    <tr>
+      <th>Movie Name</th>
+      <th>Movie Language</th>
+      <th>Movie Type</th>
+      <th>Movie Release</th>
+      <th>Movie Image</th>
+      <th colspan="2">Actions</th>
+    </tr>
+
+    <%data.map((e, i) => { %>
+      <tr>
+        <td><%= e.name %></td>
+        <td><%= e.Language %></td>
+        <td>$<%= e.Type %></td>
+        <td><%= e.Date %></td>
+        <td>
+          <img src="<%=e.image%>" alt="" width="100px">
+        </td>
+        <td>
+          <button><a href="/editData?id=<%= e.id %>">Edit</a></button>
+          <button><a href="/deleteData?id=<%= e.id %>">Delete</a></button>
+        </td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
+</div>
+</body>
+</html>
