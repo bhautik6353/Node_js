@@ -8,27 +8,23 @@ module.exports.login = (req,res)=>{
 module.exports.userlogin = async(req,res)=>{
   let admin = await schema.findOne({email:req.body.email});
   if(admin){
-    if(admin.password == req.body.password){
-      res.cookie("adminData",admin);
-      console.log("AdminData",admin);
+
       
       res.redirect("/dashboard");
-    }else{
-      res.redirect("/");
-    }
+
   } else{
     res.redirect("/");
   }
 };
 module.exports.logout=async(req,res)=>{
-res.clearCookie("adminData");
+  req.session.destroy();
 res.redirect("/");
 };
 module.exports.index = (req, res) => {
-  req.cookies.adminData ? res.render("index") : res.redirect("/");
+ res.render("index")
 };
 module.exports.addAdmin = (req, res) => {
-  req.cookies.adminData ? res.render("addAdmin") : res.redirect("/");
+  res.render("addAdmin")
 };
 module.exports.addAdminData = async (req, res) => {
   req.body.image = req.file.path;
@@ -38,12 +34,10 @@ module.exports.addAdminData = async (req, res) => {
   });
 };
 module.exports.viewAdmin = async (req, res) => {
-  if(req.cookies.adminData){
+
   let data = await schema.find();
   res.render("viewAdmin", { data });
-  }else{
-    res.redirect("/");
-  }
+
 };
 module.exports.deleteAdmin = async (req, res) => {
   let singleData = await schema.findById(req.query.id);
