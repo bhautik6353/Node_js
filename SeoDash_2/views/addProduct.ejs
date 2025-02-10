@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SeoDash Free Bootstrap Admin Template by Adminmart</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="../assets/images/logos/seodashlogo.png"
+    />
+    <link
+      rel="stylesheet"
+      href="../../node_modules/simplebar/dist/simplebar.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/styles.min.css" />
+    <style>
+      html, body {
+        height: 100%;
+      }
+      .page-wrapper {
+        min-height: 100%;
+      }
+
+    </style>
+  </head>
+
+  <body >
+    <!--  Body Wrapper -->
+    <div
+      class="page-wrapper"
+      id="main-wrapper"
+      data-layout="vertical"
+      data-navbarbg="skin6"
+      data-sidebartype="full"
+      data-sidebar-position="fixed"
+      data-header-position="fixed"
+    >
+      <!-- Sidebar Start -->
+      <%-include("aside")%>
+      <!--  Sidebar End -->
+      <!--  Main wrapper -->
+      <div class="body-wrapper">
+        <!--  Header Start -->
+        <%-include("header")%>
+        <!--  Header End -->
+        <div class="page-wrapper">
+            <!-- ============================================================== -->
+            <!-- Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+
+            
+            <div class="page-breadcrumb">
+                <div class="row">
+                    <div class="col-12 d-flex no-block align-items-center">
+                        <h4 class="page-title">Add Catagory</h4>
+                        
+                        
+                        <div class="ml-auto text-right">
+                            
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- =========================================================== -->
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 class="card-title fw-semibold mb-4 mt-5">Add Product</h5>
+                        <div class="card">
+                           
+                            <form class="form-horizontal" method="post" action="/addproduct">
+                                <div class="card-body">
+                                    <h4 class="card-title"></h4>
+                                    <div class="form-group row">
+                                        
+                                        <label for="fname"
+                                            class="col-sm-3 text-right control-label col-form-label">
+                                            SubCategory</label>
+                                        <div class="col-sm-9">
+                                           <select class="mt-1" name="SubCategoryId" >
+                                            <% data.map((e,i)=>{%>
+                                                <option value="<%= e._id %>"><%= e.subCatName %>
+                                                    (<%=e.CategoryId.categoryName%>)
+                                                    </option>
+                                          <%  })%>
+                                           </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        
+                                        <label for="fname"
+                                            class="col-sm-3 text-right control-label col-form-label">
+                                            ExtraCategory</label>
+                                        <div class="col-sm-9">
+                                            <select name="ExtracategoryId">
+                                                <% extracatdata.map((e, i) => { %>
+                                                    <option value="<%= e._id %>"><%= e.ExtraCatName %></option>
+                                                <% }) %>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mt-2">
+                                        <label for="fname"
+                                            class="col-sm-3 text-right control-label col-form-label">Product
+                                            Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control"  id="firstname" name="productName"
+                                                placeholder="Product Name Here">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row mt-3">
+                                        <label for="fname"
+                                            class="col-sm-3 text-right control-label col-form-label">Product
+                                            Price</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control"  id="firstname" name="productprice"
+                                                placeholder="Product price Here">
+                                        </div>
+                                    </div>
+                                   
+                                    
+                                    
+                                  
+                                  
+                        
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        
+                       
+                    </div>
+                    
+                </div>
+                <!-- editor -->
+                
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Bread crumb and right sidebar toggle -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Container fluid  -->
+            <!-- ============================================================== -->
+          
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://wrappixel.com">WrapPixel</a>.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+      </div>
+    </div>
+    <script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/libs/simplebar/dist/simplebar.js"></script>
+    <script src="../assets/js/sidebarmenu.js"></script>
+    <script src="../assets/js/app.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  </body>
+</html>
