@@ -1,0 +1,186 @@
+<style>
+  /* General styling for the form container */
+#survey-form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 200px;
+}
+
+/* Styling for each form group */
+.form-set {
+  margin-bottom: 20px;
+}
+
+/* Label styling */
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+/* Input field styling */
+.form-control {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+  color: #999;
+}
+
+/* Radio button and checkbox styling */
+.radio,
+.checkbox {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.radio input[type="radio"],
+.checkbox input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+/* Submit button styling */
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #218838;
+}
+
+/* Additional styling for the radio and checkbox labels */
+.radio label,
+.checkbox label {
+  font-weight: normal;
+  color: #555;
+}
+
+/* Styling for the "Enter your Gender" text */
+#radio-label {
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+</style>
+<div id="wrapper">
+    <div class="container">
+  
+  
+    <form id="survey-form" class="right" action="/insert"  method="post">
+      <div class="form-set">
+        <label id="name-label" for="name">Name</label>
+          <input
+                 type="text"
+                 name="name"
+                 id="name"
+                 class="form-control"
+                 placeholder="Enter your name"
+                 required/>
+      </div>
+  
+      <div class="form-set">
+        <label id="email-label" for="email">Dish</label>
+          <input
+                 type="text"
+                 name="email"
+                 id="email"
+                 class="form-control"
+                 placeholder="Enter your Dish"
+                 required/>
+      </div>
+  
+     
+  
+   
+  
+      <div class="form-set">
+        <p id="radio-label">Enter your Gender </p>
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="man"
+                 checked
+          />Man
+        </label>
+      
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="woman"
+          />Woman
+        </label>
+  
+        <label class="radio">
+          <input
+                 name="gender"
+                 type="radio"
+                 class="input-radio"
+                 value="other"
+          />Other
+      </label>
+      </div>
+  
+      <div class="form-set">
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="Gujarati-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />Gujarati-recipe
+        </label>
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="Punjabi-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />Punjabi-recipe
+        </label>
+      
+      
+      
+        <label>
+          <input
+                 name="prefer"
+                 value="chinese-recipe"
+                 type="checkbox"
+                 class="input-checkbox"
+          />chinese-recipe
+        </label>
+      </div>
+  
+     
+    
+     <div class="form-set">
+        <button type="submit" id="submit" class="submit-button">
+          Submit
+        </button>
+     </div>
+    </form>
+  </div>
