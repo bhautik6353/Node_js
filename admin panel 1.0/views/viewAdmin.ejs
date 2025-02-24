@@ -51,14 +51,14 @@
       <!-- ============================================================== -->
       <!-- Topbar header - style you can find in pages.scss -->
       <!-- ============================================================== -->
-     <%- include("header")%>
+      <%- include('header')%>
       <!-- ============================================================== -->
       <!-- End Topbar header -->
       <!-- ============================================================== -->
       <!-- ============================================================== -->
       <!-- Left Sidebar - style you can find in sidebar.scss  -->
       <!-- ============================================================== -->
-      <%- include("aside")%>
+      <%- include('aside')%>
       <!-- ============================================================== -->
       <!-- End Left Sidebar - style you can find in sidebar.scss  -->
       <!-- ============================================================== -->
@@ -96,11 +96,11 @@
           <!-- ============================================================== -->
           <!-- Start Page Content -->
           <!-- ============================================================== -->
-          <div class="row">
+          <div class="row"> 
             <div class="col-12">
-
-
-
+              <!-- <div class="card"></div> -->
+              <!-- <div class="card"></div> -->
+              <!-- <div class="card"></div> -->
               <div class="card">
                 <div class="card-body">
                   <h5 class="card-title">Basic Datatable</h5>
@@ -113,14 +113,12 @@
                         <tr>
                           <th>Full Name</th>
                           <th>Email</th>
-                          <th>Password</th>
                           <th>Contact No</th>
                           <th>Gender</th>
-                          
-
-                          
-                          <th>Hobby</th>
                           <th>Avtar</th>
+                          <th>Message</th>
+                          <th>Password</th>
+                          <th>Permisstions</th>
                           <th colspan="2">Actions</th>
                         </tr>
                       </thead>
@@ -130,18 +128,16 @@
                         <tr>
                             <td><%= e.fristName%> <%=e.lastName%></td>
                             <td><%= e.email%></td>
-                            <td><%= e.passWord%></td>
                             <td><%= e.contactNo%></td>
                             <td><%= e.gender%></td>
-                            
-
-                        
-                            <td><%= e.permission%></td>
                             <td><img style="height: 50px;" src="<%= e.image%>" alt=""></td>
+                            <td><%= e.message%></td>
+                            <td><%= e.passWord%></td>
+                            <td><%= e.permission%></td>
 
                            <td> 
-                         <a href="/updateAdminPage?id=<%= e._id%>"><button id="update">Update</button></a>
-                           <a href="/deleteAdmin?id=<%= e._id%>"><button id="delete">Delete</button></a>
+                         <a href="/updateAdminPage?id=<%= e._id%>"><button>Update</button></a>
+                           <a href="/deleteAdmin?id=<%= e._id%>"><button>Delete</button></a>
                           </td>
                         </tr>
                          <% })%>

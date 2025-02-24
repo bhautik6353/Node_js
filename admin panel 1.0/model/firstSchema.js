@@ -32,10 +32,13 @@ const schema = new mongoose.Schema({
         type:String,
         required:true,
     },
-
+    message :{
+        type : String,
+        required : true
+    }
     
 })
 
-const Admin = mongoose.model('AdminPanel',schema);
+const Admin = mongoose.model('AdminPanel_Passport',schema);
 
 module.exports = Admin;

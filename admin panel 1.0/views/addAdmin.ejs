@@ -16,49 +16,27 @@
     <link rel="stylesheet" type="text/css" href="assets/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" type="text/css" href="assets/libs/quill/dist/quill.snow.css">
     <link href="dist/css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+   
 </head>
 
 <body>
-    <!-- ============================================================== -->
-    <!-- Preloader - style you can find in spinners.css -->
-    <!-- ============================================================== -->
+
+  
     <div class="preloader">
         <div class="lds-ripple">
             <div class="lds-pos"></div>
             <div class="lds-pos"></div>
         </div>
     </div>
-    <!-- ============================================================== -->
-    <!-- Main wrapper - style you can find in pages.scss -->
-    <!-- ============================================================== -->
+    
     <div id="main-wrapper">
-        <!-- ============================================================== -->
-        <!-- Topbar header - style you can find in pages.scss -->
-        <!-- ============================================================== -->
-  <%- include("header")%>
-        <!-- ============================================================== -->
-        <!-- End Topbar header -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
- <%- include("aside")%>
-        <!-- ============================================================== -->
-        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
-        <!-- ============================================================== -->
-        <!-- ============================================================== -->
-        <!-- Page wrapper  -->
-        <!-- ============================================================== -->
+        
+        <%- include('header')%>
+       
+        <%- include('aside')%>
+        
         <div class="page-wrapper">
-            <!-- ============================================================== -->
-            <!-- Bread crumb and right sidebar toggle -->
-            <!-- ============================================================== -->
+          
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
@@ -80,7 +58,7 @@
             <!-- ============================================================== -->
             <!-- Container fluid  -->
             <!-- ============================================================== -->
-            <div class="container-fluid">
+            <div class="container-fluid"> 
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
@@ -102,17 +80,16 @@
                                             <input type="text" class="form-control" id="lname" name="lastName" placeholder="Last Name Here">
                                         </div>
                                     </div>
-
-                                    <div class="form-group row">
-                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Email</label>
-                                        <div class="col-sm-9">
-                                            <input type="email" class="form-control" id="email1" name="email" placeholder="Email Here">
-                                        </div>
-                                    </div>
                                     <div class="form-group row">
                                         <label for="lname" class="col-sm-3 text-right control-label col-form-label">Password</label>
                                         <div class="col-sm-9">
                                             <input type="password" class="form-control" id="lname" name="passWord" placeholder="Password Here">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="email1" class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                        <div class="col-sm-9">
+                                            <input type="email" class="form-control" id="email1" name="email" placeholder="Company Name Here">
                                         </div>
                                     </div>
                                     <div class="form-group row"> 
@@ -136,19 +113,19 @@
                                         </div>
                                     </div>
                                     <div class="form-group row" style="margin-left: 45px;">
-                                        <label class="col-md-3">Hobby</label>
+                                        <label class="col-md-3">Permission</label>
                                         <div class="col-md-9">
                                             <div class="custom-control custom-checkbox mr-sm-2">
-                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing1" name="permission" value="Dancing">
-                                                <label class="custom-control-label" for="customControlAutosizing1">Dancing</label>
+                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing1" name="permission" value="Auto Backup">
+                                                <label class="custom-control-label" for="customControlAutosizing1">Auto Backup</label>
                                             </div>
                                             <div class="custom-control custom-checkbox mr-sm-2">
-                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing2" name="permission" value="Cricket">
-                                                <label class="custom-control-label" for="customControlAutosizing2">Cricket</label>
+                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing2" name="permission" value="Notifications">
+                                                <label class="custom-control-label" for="customControlAutosizing2">Notifications</label>
                                             </div>
                                             <div class="custom-control custom-checkbox mr-sm-2">
-                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing3" name="permission" value="Study">
-                                                <label class="custom-control-label" for="customControlAutosizing3">Study</label>
+                                                <input type="checkbox" class="custom-control-input" id="customControlAutosizing3" name="permission" value="Live Chat">
+                                                <label class="custom-control-label" for="customControlAutosizing3">Live Chat</label>
                                             </div>
                                         </div>
                                     </div>
@@ -163,7 +140,12 @@
                                         </div>
                                     </div>
                                     
-
+                                    <div class="form-group row">
+                                        <label for="cono1" class="col-sm-3 text-right control-label col-form-label">Message</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="message"></textarea>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="border-top">
                                     <div class="card-body">
@@ -172,56 +154,16 @@
                                 </div>
                             </form>
                         </div>
-
-
-
-                    </div>
-                    <div class="col-md-6">
-
-
-
                     </div>
                 </div>
-                <!-- editor -->
-                <div class="row">
-                    <div class="col-12">
-
-                    </div>
-                </div>
-                <!-- ============================================================== -->
-                <!-- End PAge Content -->
-                <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Right sidebar -->
-                <!-- ============================================================== -->
-                <!-- .right-sidebar -->
-                <!-- ============================================================== -->
-                <!-- End Right sidebar -->
-                <!-- ============================================================== -->
             </div>
-            <!-- ============================================================== -->
-            <!-- End Container fluid  -->
-            <!-- ============================================================== -->
-            <!-- ============================================================== -->
-            <!-- footer -->
-            <!-- ============================================================== -->
             <footer class="footer text-center">
                 All Rights Reserved by Matrix-admin. Designed and Developed by <a href="https://wrappixel.com">WrapPixel</a>.
             </footer>
-            <!-- ============================================================== -->
-            <!-- End footer -->
-            <!-- ============================================================== -->
+
+         
         </div>
-        <!-- ============================================================== -->
-        <!-- End Page wrapper  -->
-        <!-- ============================================================== -->
     </div>
-    <!-- ============================================================== -->
-    <!-- End Wrapper -->
-    <!-- ============================================================== -->
-    <!-- ============================================================== -->
-    <!-- All Jquery -->
-    <!-- ============================================================== -->
     <script src="assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>

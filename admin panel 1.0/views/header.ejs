@@ -10,7 +10,7 @@
         <!-- ============================================================== -->
         <!-- Logo -->
         <!-- ============================================================== -->
-        <a class="navbar-brand" href="/admin">
+        <a class="navbar-brand" href="/">
           <!-- Logo icon -->
           <b class="logo-icon p-l-10">
             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
@@ -245,16 +245,14 @@
               href=""
               data-toggle="dropdown"
               aria-haspopup="true"
-              aria-expanded="false"
-              ><img
-                src="assets/images/users/1.jpg"
-                alt="user"
-                class="rounded-circle"
-                width="31"
-            /></a>
+              aria-expanded="false">
+              
+              <img src="<%=locals.user.image%>" alt="user" class="rounded-circle" width="31"/>
+          
+          </a>
             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-              <a class="dropdown-item" href="javascript:void(0)"
-                ><i class="ti-user m-r-5 m-l-5"></i> My Profile</a
+              <a class="dropdown-item" href="/profile"
+                ><i class="ti-user m-r-5 m-l-5"></i><%=locals.user.fristName%> <%=locals.user.lastName%></a
               >
               <a class="dropdown-item" href="javascript:void(0)"
                 ><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a
@@ -263,8 +261,8 @@
                 ><i class="ti-email m-r-5 m-l-5"></i> Inbox</a
               >
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="javascript:void(0)"
-                ><i class="ti-settings m-r-5 m-l-5"></i> Account Setting</a
+              <a class="dropdown-item" href="/updatepass"
+                ><i class="ti-settings m-r-5 m-l-5"></i>Change Password</a
               >
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="/logout"

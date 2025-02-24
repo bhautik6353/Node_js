@@ -1,39 +1,48 @@
-const Schema=require("../model/firstSchema")
-const passport=require("passport");
-const localstrategy = require("passport-local").Strategy;
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
+const Admin = require('../model/firstSchema');
 
-passport.use("local",new localstrategy({usernamefield:"email"},
-    async (email,passWord, done)=>{
-        let user=await Schema.findOne({email:email})
-        if(user){
-            if(user.passWord==passWord){
-                return done(null,user)
-            }else{
-                return done(null,user)
+passport.use(
+    "local",
+    new localStrategy({usernameField : "email"},
+        async (email, passWord, done) => {
+            let adminEmail = await Admin.findOne({email : email});
+
+            if(adminEmail){
+                if(adminEmail.passWord == passWord){
+                    return done(null, adminEmail);
+                } else {
+                    return done(null, false);
+                }
+            } else {
+                return done(null, false);
             }
-
-        }else{
-            return done(null,user)
-        }
-    }
-))
+    })
+);
 
 passport.serializeUser((user,done)=>{
-    done(null,user.id)
+    done(null,user.id);
 })
 
-passport.deserializeUser(async(userId,done)=>{
-    let user=await Schema.findById(userId)
-    done(null,user)
-
+passport.deserializeUser(async (userId,done)=>{
+    let user = await Admin.findById(userId);
+    done(null,user);
 })
 
-passport.checkauth=(req,res,next)=>{
+passport.checkAuth = ( req,res,next ) => {
     if(req.isAuthenticated()){
-        next()
+         next();
     }else{
-        res.redirect("/")
+        res.redirect("/");
     }
-}
+} 
 
-module.exports=passport;
+passport.AuthenticateUser=(req,res,next)=>{
+    if(req.isAuthenticated()){
+        res.locals.user=req.user;
+    }
+        next()
+    }
+
+
+module.exports = passport;
